@@ -15,7 +15,7 @@ public class UtilisateurService {
 	private UtilisateurJpaRepository repository;
 	
 	
-	public List<Utilisateur> tousLesUtilisateurs() {
+	public List<Utilisateur> trouverTousLesUtilisateurs() {
 		return repository.findAll();
 	}
 	
