@@ -31,4 +31,10 @@ public class UtilisateurService {
 		repository.save(utilisateur);
 	}
 	
+	public void ajouterUtilisateur (Utilisateur utilisateur) {
+		repository.save(utilisateur);
+	}
+	
+	
+	
 }
