@@ -35,4 +35,5 @@ public class UtilisateurController {
 	public ResponseEntity <Utilisateur> get(@PathVariable Long id) {
 		return new ResponseEntity <>(service.trouverUtilisateur(id), HttpStatus.OK);
 	}
+	
 }
