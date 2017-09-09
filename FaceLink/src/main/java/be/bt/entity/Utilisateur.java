@@ -25,6 +25,7 @@ public class Utilisateur {
 	private String statut;
 	private String biographie;
 	private long popularite;
+	private String photo;
 	private Date dateInscription;
 	private Date dateNaissance;
 	
@@ -42,7 +43,7 @@ public class Utilisateur {
 	}
 
 	public Utilisateur(long id, String prenom, String nom, String motDePasse, int droit, String email, String statut,
-			String biographie, long popularite, Date dateInscription, Date dateNaissance) {
+			String biographie, long popularite, String photo,  Date dateInscription, Date dateNaissance) {
 		super();
 		this.id = id;
 		this.prenom = prenom;
@@ -53,6 +54,7 @@ public class Utilisateur {
 		this.statut = statut;
 		this.biographie = biographie;
 		this.popularite = popularite;
+		this.photo = photo;
 		this.dateInscription = dateInscription;
 		this.dateNaissance = dateNaissance;
 	}
@@ -128,7 +130,15 @@ public class Utilisateur {
 	public void setPopularite(long popularite) {
 		this.popularite = popularite;
 	}
+	
+	public String getPhoto() {
+		return photo;
+	}
 
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	} 
+	
 	public Date getDateInscription() {
 		return dateInscription;
 	}
@@ -149,7 +159,7 @@ public class Utilisateur {
 	public String toString() {
 		return "Utilisateur [id=" + id + ", prenom=" + prenom + ", nom=" + nom + ", motDePasse=" + motDePasse
 				+ ", droit=" + droit + ", email=" + email + ", statut=" + statut + ", biographie=" + biographie
-				+ ", popularite=" + popularite + ", dateInscription=" + dateInscription + ", dateNaissance="
+				+ ", popularite=" + popularite + ", photo=" + photo + ", dateInscription=" + dateInscription + ", dateNaissance="
 				+ dateNaissance + "]";
 	}
 	

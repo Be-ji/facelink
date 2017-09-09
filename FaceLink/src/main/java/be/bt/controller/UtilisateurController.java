@@ -25,13 +25,13 @@ public class UtilisateurController {
 //		return "index";
 //	}
 	
-	@GetMapping(path="/TousLesUtilisateurs")
+	@GetMapping(path="/users")
 	public ResponseEntity <List <Utilisateur>> get() {
 		return new ResponseEntity <>(service.trouverTousLesUtilisateurs(), HttpStatus.OK);
 	}
 	
 	
-	@GetMapping(path="/utilisateur/{id}")
+	@GetMapping(path="/user/{id}")
 	public ResponseEntity <Utilisateur> get(@PathVariable Long id) {
 		return new ResponseEntity <>(service.trouverUtilisateur(id), HttpStatus.OK);
 	}
