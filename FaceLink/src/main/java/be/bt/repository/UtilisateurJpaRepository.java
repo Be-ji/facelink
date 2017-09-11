@@ -13,4 +13,7 @@ public interface UtilisateurJpaRepository extends JpaRepository<Utilisateur, Lon
 //	@Query("SELECT AVG (popularite) FROM utilisateur")	
 //	public double populariteMoyenne();
 	
+	@Query("SELECT COUNT(u.email) FROM Utilisateur u WHERE u.email=:email")
+	public int countEmail(String email);
+	
 }

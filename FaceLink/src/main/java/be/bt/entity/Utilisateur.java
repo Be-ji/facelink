@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+
 @Entity
 public class Utilisateur {
 	
@@ -20,13 +21,13 @@ public class Utilisateur {
 	private String prenom;
 	private String nom;
 	private String motDePasse;
-	private int droit;
+	@Column(unique=true)
 	private String email;
 	private String statut;
 	private String biographie;
-	private long popularite;
-	private String photo;
-	private Date dateInscription;
+	private long popularite=120;
+	private String photo = "default.png";
+	private Date dateInscription = new Date();
 	private Date dateNaissance;
 	
 	@OneToMany(mappedBy="utilisateur")
@@ -42,14 +43,13 @@ public class Utilisateur {
 		super();
 	}
 
-	public Utilisateur(long id, String prenom, String nom, String motDePasse, int droit, String email, String statut,
+	public Utilisateur(long id, String prenom, String nom, String motDePasse, String email, String statut,
 			String biographie, long popularite, String photo,  Date dateInscription, Date dateNaissance) {
 		super();
 		this.id = id;
 		this.prenom = prenom;
 		this.nom = nom;
 		this.motDePasse = motDePasse;
-		this.droit = droit;
 		this.email = email;
 		this.statut = statut;
 		this.biographie = biographie;
@@ -89,14 +89,6 @@ public class Utilisateur {
 
 	public void setMotDePasse(String motDePasse) {
 		this.motDePasse = motDePasse;
-	}
-
-	public int getDroit() {
-		return droit;
-	}
-
-	public void setDroit(int droit) {
-		this.droit = droit;
 	}
 
 	public String getEmail() {
@@ -158,7 +150,7 @@ public class Utilisateur {
 	@Override
 	public String toString() {
 		return "Utilisateur [id=" + id + ", prenom=" + prenom + ", nom=" + nom + ", motDePasse=" + motDePasse
-				+ ", droit=" + droit + ", email=" + email + ", statut=" + statut + ", biographie=" + biographie
+				+ ", email=" + email + ", statut=" + statut + ", biographie=" + biographie
 				+ ", popularite=" + popularite + ", photo=" + photo + ", dateInscription=" + dateInscription + ", dateNaissance="
 				+ dateNaissance + "]";
 	}

@@ -44,13 +44,15 @@ public class UtilisateurController {
 	
 	//@RequestMapping(path="/signup", method=RequestMethod.POST, headers="Content-Type=application/json")
 	@PostMapping("signup")
-	public ResponseEntity<Void> add(@RequestBody Utilisateur utilisateur, UriComponentsBuilder builder) {
+	public ResponseEntity<Void> signUp(@RequestBody Utilisateur utilisateur) {
 
 		service.ajouterUtilisateur(utilisateur);
-
-		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(builder.path("/user/{id}").buildAndExpand(utilisateur.getId()).toUri());
-		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+		return new ResponseEntity<>(HttpStatus.CREATED);
+	}
+	
+	@PostMapping("signup/checkEmail")
+	public ResponseEntity<Integer> checkEmail(@RequestBody String email) {
+		return new ResponseEntity<>(service.emailExistant(email), HttpStatus.ACCEPTED);
 	}
 	
 }
