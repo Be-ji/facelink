@@ -25,7 +25,7 @@ public class Utilisateur {
 	private String email;
 	private String statut;
 	private String biographie;
-	private long popularite=120;
+	private long popularite=0;
 	private String photo = "default.png";
 	private Date dateInscription = new Date();
 	private Date dateNaissance;

@@ -51,8 +51,8 @@ public class UtilisateurController {
 	}
 	
 	@PostMapping("signup/checkEmail")
-	public ResponseEntity<Integer> checkEmail(@RequestBody String email) {
-		return new ResponseEntity<>(service.emailExistant(email), HttpStatus.ACCEPTED);
+	public ResponseEntity<Long> checkEmail(@RequestBody String email) {
+		return new ResponseEntity<>(service.emailExistant(email), HttpStatus.OK);
 	}
 	
 }

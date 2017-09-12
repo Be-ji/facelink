@@ -35,7 +35,7 @@ public class UtilisateurService {
 		repository.save(utilisateur);
 	}
 	
-	public int emailExistant(String email) {
+	public long emailExistant(String email) {
 		return repository.countEmail(email);
 	}
 }
